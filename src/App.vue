@@ -1,30 +1,80 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div id="nav">
+        <Menubar class="menu">
+            <template #start>
+                <div class="titulo">API-Pokémon</div>
+            </template>
+
+            <template #end>
+                <ul id="lista">
+                    <li v-for="(item, index) in items" :key="index">
+                        <router-link :to="item.to">{{item.label}}</router-link>
+                    </li>
+                </ul>
+            </template>
+        </Menubar>
+    </div>
+    <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import { ref } from "vue";
+import Menubar from "primevue/menubar";
+
+export default {
+    components: {
+        Menubar,
+    },
+    setup() {
+        const items = ref([
+            {
+                label: "Inicio",
+                to: { name: "Home" },
+            },
+            {
+                label: "Pokemones",
+                to: { name: "Pokemones" },
+            },
+            {
+                label: "Favoritos",
+                to: { name: "Favoritos" },
+            },
+        ]);
+
+        return { items };
+    },
+};
+</script>
+<style scoped>
+.titulo {
+    margin-left: 3vh;
 }
 
-#nav {
-  padding: 30px;
+.menu {
+    background-color: #7c7c7c;
+    font-weight: bold;
+    font-size: 2rem;
+    color: whitesmoke;
+    height: 7rem;
+}
+
+#lista li {
+     display:inline;
+     padding-left:3px;
+     padding-right:3px;
+     margin-right: 3vh;
+}
+
+#nav{
+    margin-bottom: 3vh;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+    color: #d3d3d3;
 }
 </style>
