@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "primeflex": "2.0.0",
     "primeicons": "^5.0.0",
     "primevue": "^3.10.0",
     "vue": "^3.0.0",
@@ -29,6 +30,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   }
