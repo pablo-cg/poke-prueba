@@ -6,20 +6,14 @@
                     <div class="p-col-6">
                         <div class="p-grid">
                             <div class="p-col">
-                                <div class="box">
-                                    {{ slotProps.data.name }}
-                                </div>
+                                {{ slotProps.data.name }}
                             </div>
                             <div class="p-col to-end">
-                                <div class="box">
-                                    <Button
-                                        label="Info"
-                                        class="p-button-sm"
-                                        @click="
-                                            sendPokeName(slotProps.data.name)
-                                        "
-                                    />
-                                </div>
+                                <Button
+                                    label="Info"
+                                    class="p-button-sm"
+                                    @click="sendPokeName(slotProps.data.name)"
+                                />
                             </div>
                         </div>
                     </div>
@@ -66,17 +60,27 @@ export default {
 <style scoped lang="scss">
 .to-end {
     text-align: end;
-    padding-right: 20%;
+    margin-right: 3rem;
 }
 
 ::v-deep(.p-button.p-button-sm) {
     background-color: #17a2b8 !important;
     border-radius: 8px !important;
     width: 80px;
+    font-family: "Montserrat", sans-serif;
 }
 
 ::v-deep(.p-dataview-grid) {
     text-transform: capitalize;
     font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+::v-deep(.p-fieldset) {
+    border-color: #7c7c7c;
+    .p-fieldset-content {
+        margin-left: 3rem;
+        padding: 0;
+    }
 }
 </style>
