@@ -19,11 +19,11 @@ export default {
             },
             {
                 label: "Pokemones",
-                to: { name: "Pokemones" },
+                to: { name: "PokeList" },
             },
             {
                 label: "Favoritos",
-                to: { name: "Favoritos" },
+                to: { name: "PokeFavorites" },
             },
         ]);
 
