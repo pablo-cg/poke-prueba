@@ -1,17 +1,7 @@
 <template>
-    <div id="nav">
-        <Menubar class="menu">
-            <template #start>
-                <div class="titulo">API-Pokémon</div>
-            </template>
-
-            <template #end>
-                <ul id="lista">
-                    <li v-for="(item, index) in items" :key="index">
-                        <router-link :to="item.to">{{item.label}}</router-link>
-                    </li>
-                </ul>
-            </template>
+    <div>
+        <Menubar :model="items">
+            <template #start> API-Pokémon </template>
         </Menubar>
     </div>
 </template>
@@ -23,39 +13,24 @@ export default {
     components: {
         Menubar,
     },
-    props:['items']
+    props: ["items"],
 };
 </script>
-<style scoped>
-.titulo {
-    margin-left: 3vh;
-}
-
-.menu {
+<style scoped lang="scss">
+::v-deep(.p-menubar) {
     background-color: #7c7c7c;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 2rem;
     color: whitesmoke;
     height: 7rem;
-}
-
-#lista li {
-     display:inline;
-     padding-left:3px;
-     padding-right:3px;
-     margin-right: 3vh;
-}
-
-#nav{
-    margin-bottom: 3vh;
-}
-
-#nav a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-#nav a.router-link-exact-active {
-    color: #d3d3d3;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-bottom: 3rem;
+    font-family: "Montserrat", sans-serif;
+    .p-menuitem-text {
+        color: whitesmoke !important;
+        font-weight: 400;
+    }
 }
 </style>
