@@ -16,7 +16,9 @@
                                         label="Info"
                                         icon="pi pi-info-circle"
                                         class="p-button-info poke-info-btn"
-                                        @click="getInfo(slotProps.data)"
+                                        @click="
+                                            sendPokeName(slotProps.data.name)
+                                        "
                                     />
                                 </div>
                             </div>
@@ -25,7 +27,6 @@
                 </template>
             </DataView>
         </Fieldset>
-        
     </div>
 </template>
 
@@ -37,22 +38,27 @@ import { ref } from "@vue/reactivity";
 
 export default {
     name: "Pokemones",
+
     components: {
         Fieldset,
         DataView,
         Button,
     },
+
     props: ["pokemons"],
-    setup() {
+
+    emits: ["getPokeInfo"],
+
+    setup(props, { emit }) {
         const layout = ref("grid");
 
-        function getInfo(pokeData) {
-            console.log(pokeData);
+        function sendPokeName(pokeName) {
+            emit("getPokeInfo", pokeName);
         }
 
         return {
             layout,
-            getInfo,
+            sendPokeName,
         };
     },
 };
