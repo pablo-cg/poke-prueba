@@ -1,6 +1,6 @@
 <template>
     <div v-if="favoritePoke.length">
-        <h1>Tus Favoritos</h1>
+        <h1 id="titulo">Tus Favoritos</h1>
         <div style="margin-top: 0.5em">
             <div class="p-grid">
                 <div
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-h1 {
-    font-weight: 100;
+#titulo {
+    font-weight: 400;
 }
 </style>
