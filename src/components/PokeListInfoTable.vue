@@ -6,7 +6,6 @@
             :rows="5"
             paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
             :rowsPerPageOptions="[5, 10, 15]"
-            responsiveLayout="scroll"
             currentPageReportTemplate="Mostrando registros del {first} al {last} de un total de {totalRecords}"
         >
             <template #empty> No has seleccionado un pokémon. </template>
@@ -57,7 +56,7 @@ import { computed } from "@vue/runtime-core";
 import { useStore } from "vuex";
 
 export default {
-    //favorito, nombre, alto, peso, imagen, eliminar
+    name: "PokeListInfoTable",
     components: {
         DataTable,
         Column,
@@ -94,9 +93,23 @@ export default {
     background-color: #17a2b8 !important;
     border-radius: 8px !important;
     width: 100px;
+    font-family: "Rubik", sans-serif;
 }
 
-::v-deep(.p-datatable-tbody) {
-    text-transform: capitalize;
+::v-deep(.p-datatable) {
+    font-family: "Rubik", sans-serif;
+    .p-datatable-tbody {
+        text-transform: capitalize;
+    }
+    .p-column-title {
+        font-weight: 600;
+    }
+}
+
+::v-deep(.p-paginator) {
+    font-family: "Rubik", sans-serif;
+    .p-highlight {
+        background-color: #eaeaea !important;
+    }
 }
 </style>

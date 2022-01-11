@@ -13,7 +13,11 @@
             </div>
             <div class="p-col">
                 <div class="p-inputgroup">
-                    <Button label="Siguiente" class="p-button-sm poke-next-btn" @click="nextPage" />
+                    <Button
+                        label="Siguiente"
+                        class="p-button-sm poke-next-btn"
+                        @click="nextPage"
+                    />
                 </div>
             </div>
         </div>
@@ -75,7 +79,7 @@ export default {
             try {
                 const { data, error } = await PokeService.getPokemon(pokeName);
                 if (error) throw error;
-                store.dispatch('addPokeToList', data)
+                store.dispatch("addPokeToList", data);
             } catch (error) {
                 crash.value = error;
             }
@@ -102,13 +106,15 @@ export default {
     margin-top: 0.5rem;
 }
 
-::v-deep(.p-button-sm.p-button-outlined.poke-prev-btn){
+::v-deep(.p-button-sm.p-button-outlined.poke-prev-btn) {
     color: #7c7c7c !important;
     width: 110px !important;
+    font-family: "Rubik", sans-serif;
 }
 
-::v-deep(.p-button-sm.poke-next-btn){
+::v-deep(.p-button-sm.poke-next-btn) {
     width: 110px !important;
     background-color: #7c7c7c !important;
+    font-family: "Rubik", sans-serif;
 }
 </style>

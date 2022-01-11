@@ -10,6 +10,7 @@
 import Menubar from "primevue/menubar";
 
 export default {
+    name: "PokeNavBar",
     components: {
         Menubar,
     },
@@ -27,10 +28,10 @@ export default {
     padding-left: 3rem;
     padding-right: 3rem;
     margin-bottom: 3rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Rubik", sans-serif;
     .p-menuitem-text {
         color: whitesmoke !important;
-        font-weight: 400;
+        font-weight: 300;
     }
 }
 </style>

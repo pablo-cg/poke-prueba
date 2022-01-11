@@ -5,7 +5,7 @@
                 <template #grid="slotProps">
                     <div class="p-col-6">
                         <div class="p-grid">
-                            <div class="p-col">
+                            <div class="p-col p-text-capitalize">
                                 {{ slotProps.data.name }}
                             </div>
                             <div class="p-col to-end">
@@ -30,7 +30,7 @@ import Button from "primevue/button";
 import { ref } from "@vue/reactivity";
 
 export default {
-    name: "Pokemones",
+    name: "PokeListDataView",
 
     components: {
         Fieldset,
@@ -67,13 +67,12 @@ export default {
     background-color: #17a2b8 !important;
     border-radius: 8px !important;
     width: 80px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
 ::v-deep(.p-dataview-grid) {
-    text-transform: capitalize;
     font-size: 1.2rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
 ::v-deep(.p-fieldset) {
