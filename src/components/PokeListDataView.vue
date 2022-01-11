@@ -1,12 +1,12 @@
 <template>
     <div v-if="pokemons">
         <Fieldset legend="Lista de Pokemones">
-            <DataView :value="pokemons" :layout="layout" :rows="5">
+            <DataView :value="pokemons" :layout="layout">
                 <template #grid="slotProps">
                     <div class="p-col-6">
                         <div class="p-grid">
                             <div class="p-col">
-                                <div class="box poke-name">
+                                <div class="box">
                                     {{ slotProps.data.name }}
                                 </div>
                             </div>
@@ -14,8 +14,7 @@
                                 <div class="box">
                                     <Button
                                         label="Info"
-                                        icon="pi pi-info-circle"
-                                        class="p-button-info poke-info-btn"
+                                        class="p-button-sm"
                                         @click="
                                             sendPokeName(slotProps.data.name)
                                         "
@@ -52,9 +51,9 @@ export default {
     setup(props, { emit }) {
         const layout = ref("grid");
 
-        function sendPokeName(pokeName) {
+        const sendPokeName = (pokeName) => {
             emit("getPokeInfo", pokeName);
-        }
+        };
 
         return {
             layout,
@@ -70,13 +69,14 @@ export default {
     padding-right: 20%;
 }
 
-.poke-info-btn {
+::v-deep(.p-button.p-button-sm) {
     background-color: #17a2b8 !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
+    width: 80px;
 }
 
-.poke-name {
+::v-deep(.p-dataview-grid) {
     text-transform: capitalize;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 </style>
