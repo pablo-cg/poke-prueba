@@ -13,7 +13,7 @@ export default createStore({
             state.pokeInfoList = state.pokeInfoList.filter(poke => poke.name != pokeName);
         },
         ADD_TO_FAVLIST(state, pokemon) {
-            state.pokeInfoList.push(pokemon)
+            state.pokeFavList.push(pokemon)
         }
     },
     actions: {
