@@ -9,14 +9,14 @@
                     :key="pokemon.id"
                 >
                     <div class="box">
-                        <PokeFavoriteCard :pokemon="pokemon" />
+                        <PokeFavoriteCard data-test-id="pokecard" :pokemon="pokemon" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div v-else>
-        <h1>No tienes pokemones favoritos</h1>
+        <h1 id="titulo">No tienes pokemones favoritos</h1>
     </div>
 </template>
 <script>
