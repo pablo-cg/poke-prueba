@@ -45,6 +45,7 @@
                 </template>
             </Column>
         </DataTable>
+        <Toast />
     </div>
 </template>
 
@@ -52,6 +53,8 @@
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Button from "primevue/button";
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
@@ -61,10 +64,23 @@ export default {
         DataTable,
         Column,
         Button,
+        Toast,
     },
     setup() {
+        const toast = useToast();
         const store = useStore();
-        const pokemonInfoList = computed(() => store.state.pokeInfoList.pokemons);
+        const pokemonInfoList = computed(
+            () => store.state.pokeInfoList.pokemons
+        );
+
+        const pokemonAdded = (pokemon) => {
+            toast.add({
+                severity: "success",
+                summary: "Pokémon agregado",
+                detail: pokemon + " ha sido agregado a favoritos",
+                life: 3000,
+            });
+        };
 
         const deletePokemon = (name) => {
             store.dispatch("pokeInfoList/removePokemon", name);
@@ -73,6 +89,8 @@ export default {
         const addPokeToFavorites = (pokemon) => {
             store.dispatch("pokeFavorites/addPokemon", pokemon);
             deletePokemon(pokemon.name);
+            const pokeName = pokemon.name;
+            pokemonAdded(pokeName.charAt(0).toUpperCase() + pokeName.slice(1));
         };
 
         return {
