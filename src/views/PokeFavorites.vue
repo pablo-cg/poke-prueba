@@ -21,7 +21,7 @@
 </template>
 <script>
 import PokeFavoriteCard from "../components/PokeFavoriteCard.vue";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { useStore } from "vuex";
 export default {
     name: "PokeFavorites",

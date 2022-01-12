@@ -6,7 +6,7 @@
 
 <script>
 import Fieldset from "primevue/fieldset";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 export default {
     name: "PokeFavoriteCard",
     props: ["pokemon"],

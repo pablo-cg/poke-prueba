@@ -30,8 +30,7 @@ import PokeService from "../service/PokeService";
 import PokeListDataView from "../components/PokeListDataView.vue";
 import PokeListInfoTable from "../components/PokeListInfoTable.vue";
 import Button from "primevue/button";
-import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { ref, onMounted } from "vue";
 import { useStore } from "vuex";
 
 export default {

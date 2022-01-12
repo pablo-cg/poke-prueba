@@ -27,7 +27,7 @@
 import Fieldset from "primevue/fieldset";
 import DataView from "primevue/dataview";
 import Button from "primevue/button";
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 
 export default {
     name: "PokeListDataView",
