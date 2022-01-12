@@ -64,14 +64,14 @@ export default {
     },
     setup() {
         const store = useStore();
-        const pokemonInfoList = computed(() => store.state.pokeInfoList);
+        const pokemonInfoList = computed(() => store.state.pokeInfoList.pokemons);
 
         const deletePokemon = (name) => {
-            store.dispatch("removePokeFromList", name);
+            store.dispatch("pokeInfoList/removePokemon", name);
         };
 
         const addPokeToFavorites = (pokemon) => {
-            store.dispatch("addPokeToFavList", pokemon);
+            store.dispatch("pokeFavorites/addPokemon", pokemon);
             deletePokemon(pokemon.name);
         };
 

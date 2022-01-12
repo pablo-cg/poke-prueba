@@ -29,7 +29,7 @@ export default {
     setup() {
         const store = useStore();
 
-        const favoritePoke = computed(() => store.state.pokeFavList);
+        const favoritePoke = computed(() => store.state.pokeFavorites.pokemons);
 
         return {
             favoritePoke,

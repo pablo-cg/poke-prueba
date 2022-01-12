@@ -78,7 +78,7 @@ export default {
             try {
                 const { data, error } = await PokeService.getPokemon(pokeName);
                 if (error) throw error;
-                store.dispatch("addPokeToList", data);
+                store.dispatch("pokeInfoList/addPokemon", data);
             } catch (error) {
                 crash.value = error;
             }
